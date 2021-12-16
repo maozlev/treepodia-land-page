@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>treepodiaPlayer</title>
+	<!-- Treepodia HTML5 Player 3.0 Script -->
+<script type="text/javascript" src="//dxa05szpct2ws.cloudfront.net/player3/TreepodiaPlayer.js"></script>
+</head>
+<img src="TREEPODIA1.png" class="center" id="imgToSwitch">
+<body>
+	<p class="center">treepodia player</p>
+	<div id="treepodiaPlayerMain" class="center3"></div>
+	<br><br><br>
+	<form>
+		<input type="text" class="center" id="geturl"></input>
+		<button type="button" onclick="switchImg()">Click Me!</button>	 
+	</div>
+</body>
+
+<script type="text/javascript">
+	function initTreepodia(player) {
+		player.show({
+			//Required Parameters
+			account: "UA-CLALIT",
+			sku: "test1",
+			container: "treepodiaPlayerMain",
+
+			// Optional Video Parameters
+			autoplay: false,
+			loop: false,
+			muted: false,
+
+			// Optional Player Parameters
+			controls: true,
+			showJumboPlay: true,
+			blueJumboPlay: true,
+			responsive: true,
+			showTime: true,
+			showDuration: true,
+			pictureInPicture: false,
+
+			// // Popup
+			popup: false,
+			popupBtnWidth: 50, // pixels
+			popupBtnHeight: 50, // pixels
+			popupBtnImg: null, // string:URL
+
+			// // Poster
+			showPoster: true,
+			posterUrl: null, // string:URL
+
+			gaEnabled: false,
+			gaId: null, //STRING: GTAG ID (UA-XXXXXXX-XX)
+
+			//CALLBACKS
+			onReady: function (treepodiaPlayer) {
+			},
+
+			onError: function (error) {
+			},
+		});
+	}
+	var elem = document.getElementById('geturl');
+	var txt = elem.textContent || elem.innerText;
+	
+	
+function switchImg() {
+	console.log(x);
+	var x = document.getElementById('geturl').value; //initializes counter
+	console.log(x);
+	document.getElementById("imgToSwitch").src = x;
+}
+
+</script>
+
+<style>
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 10%;
+}
+.button {
+  background-color:blue ; 
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+.center2 {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+.center3 {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+</style>
+</html>
+
+
